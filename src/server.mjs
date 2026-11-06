@@ -1,8 +1,8 @@
 import {createServer} from 'node:http';
 import {readFile} from 'node:fs/promises';
 
-const source = await readFile(new URL('./catalog.js', import.meta.url), 'utf8');
-const catalog = JSON.parse(source.trim().slice('const catalog = '.length, -1));
+const source = await readFile(new URL('../data/catalog.json', import.meta.url), 'utf8');
+const catalog = JSON.parse(source);
 const normalize = value => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 const searchIndex = catalog.map(video => ({
   video,
@@ -40,7 +40,7 @@ const assets = new Map(await Promise.all([
   ['/', 'index.html', 'text/html'],
   ['/app.js', 'app.js', 'text/javascript'],
   ['/style.css', 'style.css', 'text/css'],
-].map(async ([route, file, type]) => [route, {type: type + '; charset=utf-8', body: await readFile(new URL(file, import.meta.url))}])));
+].map(async ([route, file, type]) => [route, {type: type + '; charset=utf-8', body: await readFile(new URL('../public/' + file, import.meta.url))}])));
 
 function send(res, status, type, body, cache = 'no-cache') {
   res.writeHead(status, {'Content-Type': type, 'Cache-Control': cache});

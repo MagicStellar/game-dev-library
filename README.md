@@ -13,3 +13,9 @@ npm start
 Open [http://127.0.0.1:3000/](http://127.0.0.1:3000/) in your browser. Use `npm run dev` to restart the server automatically as you edit. If PowerShell blocks the npm script wrapper, use `npm.cmd start`.
 
 Click a thumbnail or title to play a video in the site. If the uploader restricts embedded playback, use **Open on YouTube** in the player.
+
+## Project structure
+
+- **public/** contains the HTML, CSS, and browser JavaScript.
+- **src/server.mjs** runs the HTTP server and handles search and thumbnail requests.
+- **data/catalog.json** contains the video catalog loaded by the server.
