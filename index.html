@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A searchable library of game development talks, tutorials, and studio breakdowns.">
+<title>Game Dev Library</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body id="top">
+<a class="skip" href="#library">Skip to library</a>
+<header class="shell mast"><a class="brand" href="#top"><span class="mark" aria-hidden="true">◇</span> Game Dev Library</a><nav aria-label="Main"><a href="#topics">Topics</a><a href="#library">Videos</a></nav></header>
+<main class="shell">
+<section class="intro-block" aria-labelledby="headline">
+<p class="eyebrow">THE GAME DEVELOPMENT VIDEO ARCHIVE</p>
+<h1 id="headline">Learn how games are made.</h1>
+<p class="lede">Browse 6,928 talks, tutorials, and studio videos across 22 game development disciplines.</p>
+</section>
+<section id="topics" class="section" aria-labelledby="topics-title">
+<p class="eyebrow">01 / TOPIC INDEX</p><h2 id="topics-title">Explore by discipline</h2>
+<p class="sub">Choose a topic to filter the video library.</p>
+<div id="topic-list" class="topics"></div>
+</section>
+<section id="library" class="section library" aria-labelledby="library-title">
+<p class="eyebrow">02 / VIDEO LIBRARY</p><h2 id="library-title">Find a video</h2>
+<form id="filters" role="search">
+<label class="search"><span aria-hidden="true">⌕</span><input id="query" type="search" aria-label="Search videos" placeholder="Search titles, games, studios, or keywords…"></label>
+<div class="selects">
+<label>Topic<select id="topic"><option value="">All topics</option></select></label>
+<label>Channel<select id="channel"><option value="">All channels</option></select></label>
+<label>Collection<select id="collection"><option value="">All videos</option><option value="learning">Talks &amp; learning</option><option value="other">Other uploads</option><option value="starter">Suggested starting points</option></select></label>
+<button type="reset" class="reset">Clear all filters</button></div>
+</form>
+<div id="active-filters" class="active-filters" aria-label="Active filters"></div>
+<div class="results-head"><p id="results-count" role="status"></p><span id="ordering">Suggested starting points first</span></div>
+<div id="results" class="cards"></div>
+<nav id="pages" class="pages" aria-label="Result pages"><button id="previous" type="button">← Previous</button><span id="page-number"></span><button id="next" type="button">Next →</button></nav>
+<noscript>Enable JavaScript to browse and search the catalog.</noscript>
+</section>
+</main>
+<footer class="shell footer"><span>Game Dev Library · Videos from four official YouTube archives</span><a href="#top">Back to top ↑</a></footer>
+<dialog id="player" aria-labelledby="player-title"><div class="dialog-head"><p class="eyebrow" id="player-topic"></p><form method="dialog"><button type="submit" aria-label="Close video">×</button></form></div><h2 id="player-title"></h2><div id="screen"></div><div class="dialog-foot"><p id="player-info"></p><a id="watch-link" class="primary" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a></div></dialog>
+</body>
+</html>
